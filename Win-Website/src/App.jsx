@@ -1,5 +1,8 @@
 import React from 'react'
 import Navbar from './components/navbar'
+import logo from './assets/images/logo.png'
+import banner from './assets/images/main-page-banner.webp'
+
 const App = () => {
   return (
     <>
@@ -10,11 +13,11 @@ const App = () => {
       >
         <div className="text-center">
           <h1
-            className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl"
+            className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl "
           >
-            Get Your Dream Design
+            Get Your <span className='text-black'>Dream</span> Design
           </h1>
-          <p className="my-4 text-xl text-white">
+          <p className="transition ease-in-out delay-150 bg-blue-700 hover:-translate-y-1 hover:scale-110 duration-300 my-4 shadow-xl hover:shadow-inner font-bold text-xl text-white bg-clip-content p-6 border-4 border-white border-dashed">
             Hire us to Do the hard work for you
           </p>
         </div>
@@ -62,7 +65,15 @@ const App = () => {
             <div className="p-4">
               <div className="mb-6">
                 <div className="text-gray-600 my-2">Best Seller</div>
-                <h3 className="text-xl font-bold">Logo Design</h3>
+                <a className="flex flex-shrink-0 items-center mr-4" href="/index.html">
+                  <img
+                    className="h-12 w-auto"
+                    src= {logo}
+                    alt="The Logo"
+                  />
+                  <h3 className="text-xl font-bold">Logo Design</h3>
+                </a>
+                
               </div>
 
               <div className="mb-5">
@@ -91,7 +102,15 @@ const App = () => {
             <div className="p-4">
               <div className="mb-6">
                 <div className="text-gray-600 my-2">Best Reviews</div>
-                <h3 className="text-xl font-bold">video editing</h3>
+                <a className="flex flex-shrink-0 items-center mr-4" href="/index.html">
+                  <img
+                    className="h-12 w-auto"
+                    src= {logo}
+                    alt="The Logo"
+                  />
+                  <h3 className="text-xl font-bold">video editing</h3>
+                </a>
+                
               </div>
 
               <div className="mb-5">
@@ -120,7 +139,15 @@ const App = () => {
             <div className="p-4">
               <div className="mb-6">
                 <div className="text-gray-600 my-2">Popular</div>
-                <h3 className="text-xl font-bold">Web Development</h3>
+                <a className="flex flex-shrink-0 items-center mr-4" href="/index.html">
+                  <img
+                    className="h-12 w-auto"
+                    src= {logo}
+                    alt="The Logo"
+                  />
+                  <h3 className="text-xl font-bold">Web Development</h3>
+                </a>
+                
               </div>
 
               <div className="mb-5">
