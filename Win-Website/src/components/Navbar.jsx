@@ -4,7 +4,7 @@ import win from '../assets/images/win.png'
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-700 border-b border-blue-500 sticky top-0">
+    <nav className="bg-blue-700 border-b border-blue-500 sticky ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         
         <div className="flex h-20 items-center justify-between">
