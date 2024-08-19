@@ -1,9 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './components/navbar'
 import logo from './assets/images/logo.png'
+import { motion } from 'framer-motion'
 import '../style.css'
 
 const App = () => {
+  const [mousePosition , setMousePosition] = useState({
+    x : 0,
+    y : 0
+  })
+
+  const [mouseVariant , setMouseVariant] = useState('default')
+
+  useEffect(() => {
+    const mouseMove = e => {
+      setMousePosition({
+        x : e.clientX,
+        y : e.clientY
+      })
+
+    }
+
+    window.addEventListener('mousemove',mouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', mouseMove)
+    }
+  })
+  const variants = {
+    default : {
+      x : mousePosition.x - 16,
+      y : mousePosition.y - 16
+    },
+    text : {
+      width : 100,
+      height : 100,
+      x : mousePosition.x - 50,
+      y : mousePosition.y - 50,
+      backgroundColor : '#1d4ed8' ,
+      mixBlendMode : 'difference'
+    }
+  }
+  const textEnter =() => setMouseVariant('text')
+  const textLeave = () => setMouseVariant('default')
   return (
     <>
     <Navbar />
@@ -13,14 +52,16 @@ const App = () => {
       >
         <div className="text-center">
           <h1
+            onMouseEnter={textEnter} onMouseLeave={textLeave}
             className="animate-bounce text-4xl font-extrabold text-white sm:text-5xl md:text-6xl inline-block"
           >
             Get Your <span className='text-black'>Dream</span> Design
           </h1>
           <p className="transition ease-in-out delay-150 bg-blue-700 hover:-translate-y-1 hover:scale-110 duration-300 my-4 shadow-xl hover:shadow-inner font-bold text-xl text-white bg-clip-content p-6 border-4 border-white border-dashed">
-            <p className='animateText border-r-4 inline-block'>Hire us to Do the hard work for you</p>
+            <p onMouseEnter={textEnter} onMouseLeave={textLeave}className='animateText border-r-4 inline-block'>Hire us to Do the hard work for you</p>
           </p>
         </div>
+        <motion.div className='Cursor' variants={variants} animate={mouseVariant}/>
       </div>
     </section>
 
@@ -28,11 +69,12 @@ const App = () => {
       <div className="container-xl lg:container m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold">Know More About Us</h2>
+            <h2 className="text-2xl font-bold"><span onMouseEnter={textEnter} onMouseLeave={textLeave} >Know More About Us</span></h2>
             <p className="mt-2 mb-4">
-              Who we are and what we do
+              <span onMouseEnter={textEnter} onMouseLeave={textLeave} >Who we are and what we do</span>
+              
             </p>
-            <a
+            <a onMouseEnter={textEnter} onMouseLeave={textLeave}
               href="/jobs.html"
               className="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
             >
@@ -40,11 +82,11 @@ const App = () => {
             </a>
           </div>
           <div className="bg-blue-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold">Our Work</h2>
+            <h2 className="text-2xl font-bold"><span onMouseEnter={textEnter} onMouseLeave={textLeave} >Our Work</span></h2>
             <p className="mt-2 mb-4">
-              The Work we did in the past and clients reviews
+              <span onMouseEnter={textEnter} onMouseLeave={textLeave} >The Work we did in the past and clients reviews</span>
             </p>
-            <a
+            <a onMouseEnter={textEnter} onMouseLeave={textLeave}
               href="/add-job.html"
               className="inline-block bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600"
             >
@@ -57,7 +99,7 @@ const App = () => {
 
     <section className="bg-blue-50 px-4 py-10">
       <div className="container-xl lg:container m-auto">
-        <h2 className="text-3xl font-bold text-blue-500 mb-6 text-center">
+        <h2 onMouseEnter={textEnter} onMouseLeave={textLeave}  className="text-3xl font-bold text-blue-500 mb-6 text-center">
           Top Survices
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -177,7 +219,7 @@ const App = () => {
     </section>
 
     <section className="m-auto max-w-lg my-10 px-6">
-      <a
+      <a onMouseEnter={textEnter} onMouseLeave={textLeave} 
         href="jobs.html"
         className="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
         >View All Survices</a
