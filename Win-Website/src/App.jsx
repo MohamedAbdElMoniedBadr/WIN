@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './components/navbar'
 import logo from './assets/images/logo.png'
-import banner from './assets/images/main-page-banner.webp'
+import '../style.css'
 
 const App = () => {
   return (
@@ -13,12 +13,12 @@ const App = () => {
       >
         <div className="text-center">
           <h1
-            className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl "
+            className="animate-bounce text-4xl font-extrabold text-white sm:text-5xl md:text-6xl inline-block"
           >
             Get Your <span className='text-black'>Dream</span> Design
           </h1>
           <p className="transition ease-in-out delay-150 bg-blue-700 hover:-translate-y-1 hover:scale-110 duration-300 my-4 shadow-xl hover:shadow-inner font-bold text-xl text-white bg-clip-content p-6 border-4 border-white border-dashed">
-            Hire us to Do the hard work for you
+            <p className='animateText border-r-4 inline-block'>Hire us to Do the hard work for you</p>
           </p>
         </div>
       </div>

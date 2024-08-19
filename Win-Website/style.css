@@ -1,0 +1,16 @@
+.animateText{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 5s forwards,
+        cursor .4s step-end infinite alternate;
+}
+@keyframes cursor {
+    50% { border-color: transparent; }
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 50%; }
+}
+
