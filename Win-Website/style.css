@@ -1,6 +1,8 @@
-*{
+
+.special{
     cursor: none;
 }
+
 .animateText{
     width: 100%;
     white-space: nowrap;
@@ -21,7 +23,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     pointer-events: none;
